@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container pb-lg-5">
+        <div>
+            <table border="2" cellpadding="8rem" width="100%">
+
+                <tr style="background: lightgreen">
+                    <td colspan="5"><h2 style="color: black">Wildlife of Sundarbans</h2></td>
+                </tr>
+                <tr style="background: lightgoldenrodyellow;">
+                    <td>Wildlife_Id</td>
+                    <td>Name</td>
+                    <td>Type</td>
+                    <td>Picture</td>
+                </tr>
+                {% for x in wildlife_list %}
+                    <tr>
+                        <td>{{ x.w_id }}</td>
+                        <td>{{ x.w_name }}</td>
+                        <td>{{ x.w_type }}</td>
+                        {% if x.w_pic %}
+                            <td align="center"><img width="150rem" src="{{ x.w_pic.url }}"></td>
+                        {% endif %}
+
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
