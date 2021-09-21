@@ -1,1 +1,1 @@
-web:gunicorn Project_SUNDARBANS.wsgi --log-file-
+web: gunicorn Project_SUNDARBANS.wsgi --log-file -
